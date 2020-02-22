@@ -1,6 +1,6 @@
 # mFFT 
 A minimalist and portable Fast Fourier Transform library for small applications.
-- Contains forward FFT, inverse FFT, and separatable 2D FFT
+- Contains forward FFT, inverse FFT, and separable 2D FFT
 - Radix 2 decimation-in-time implementation
 - Core code consists of ~50 lines only
 - C99 compliant and self-contained
