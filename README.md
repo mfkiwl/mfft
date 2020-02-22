@@ -14,7 +14,7 @@ float complex data[1024]; // requires size to be 2^n
 fft(data, 1024);          // performs FFT inplace
 ```
 ## Demo
-```bash
+```
 make
 ./build/test
 
