@@ -26,25 +26,25 @@ static void compute_butterfly_for_group(float complex* data, int len, int stride
     }
 }
 
-void fast_fourier_transform(float complex* data, int len, int stride, int inverse) {
+void fast_fourier_transform(float complex* data, int len, int stride, bool inverse) {
     assert(data && len >= 0 && IS_POWER_OF_TWO(len) && stride >= 0);
     bit_reverse_permutation(data, len, stride);
     compute_butterfly_for_group(data, len, stride, 1, 0, 1);
-    float complex rotation = (inverse > 0) ? I : -I;
+    float complex rotation = inverse ? I : -I;
     for (int stage = 2; stage < (len); stage <<= 1, rotation = csqrtf(rotation)) {
         float complex twiddle_factor = 1;
         for (int group = 0; group < stage; ++group, twiddle_factor *= rotation) {
             compute_butterfly_for_group(data, len, stride, stage, group, twiddle_factor);
         }
     }
-    if (inverse > 0) {
+    if (inverse) {
         for (int i = 0; i < len; ++i) {
             data[i * stride] /= len;
         }
     }
 }
 
-void fft_2d(float complex* data, int x_len, int y_len, int inverse) {
+void fft_2d(float complex* data, int x_len, int y_len, bool inverse) {
     for (int x = 0; x < x_len; ++x) {
         fast_fourier_transform(data + x, y_len, x_len, inverse);
     }

@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <time.h>
 
-#define TEST_SAMPLE_LEN (32)
+#define TEST_SAMPLE_LEN (8)
 #define BENCHMARK_ITERATIONS (10000)
 #define DATA_LEN (1024)
 static float complex data[DATA_LEN];
@@ -12,14 +12,14 @@ int main() {
 
     ifft(data, TEST_SAMPLE_LEN);
 
-    printf("test input (base frequency in time domain):\n");
+    printf("test input (time domain):\n");
     for (int i = 0; i < TEST_SAMPLE_LEN; ++i) {
         printf("  n %i re %f im %f\n", i, crealf(data[i]), cimagf(data[i]));
     }
 
     fft(data, TEST_SAMPLE_LEN);
 
-    printf("test output (base frequency in frequency domain):\n");
+    printf("test output (freq domain):\n");
     for (int i = 0; i < TEST_SAMPLE_LEN; ++i) {
         printf("  n %i re %f im %f\n", i, crealf(data[i]), cimagf(data[i]));
     }
