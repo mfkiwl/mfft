@@ -9,8 +9,7 @@ DEPS := $(OBJS:.o=.d)
 $(BUILD_DIR)/test: $(OBJS)
 	$(CC) $(OBJS) -o $@ $(LDFLAGS) $(LDLIBS)
 
-INC_DIRS := $(shell find -L $(INC_DIR) -type d)
-INC_FLAGS := $(addprefix -I,$(INC_DIRS))
+INC_FLAGS := $(addprefix -I,$(INC_DIR))
 
 COMMONFLAGS =  -Wall -Wextra -Ofast -DDEBUG
 

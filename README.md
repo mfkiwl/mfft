@@ -19,8 +19,7 @@ make
 ./build/test
 
 >>>
-
-test input (base frequency in time domain):
+test input (time domain):
   n 0 re 1.000000 im 0.000000
   n 1 re 0.707107 im 0.707107
   n 2 re 0.000000 im 1.000000
@@ -29,7 +28,7 @@ test input (base frequency in time domain):
   n 5 re -0.707107 im -0.707107
   n 6 re 0.000000 im -1.000000
   n 7 re 0.707107 im -0.707107
-test output (base frequency in frequency domain):
+test output (freq domain):
   n 0 re 0.000000 im 0.000000
   n 1 re 8.000000 im 0.000000
   n 2 re 0.000000 im 0.000000
@@ -39,5 +38,5 @@ test output (base frequency in frequency domain):
   n 6 re 0.000000 im 0.000000
   n 7 re 0.000000 im 0.000000
 benchmarking 1024 point FFT ...
-  10000 iterations took 0.122324s
+  10000 iterations took 0.154513s
 ```

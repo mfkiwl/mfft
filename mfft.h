@@ -3,8 +3,6 @@
 #include <complex.h>
 
 // *** all dimentions must be a power of two ***
-#define IS_POWER_OF_TWO(X) !(X & (X - 1))
-
 void fast_fourier_transform(float complex* data, int len, int stride, bool inverse);
 
 static inline void fft(float complex* data, int len) {

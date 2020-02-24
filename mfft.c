@@ -1,5 +1,8 @@
-#include "mfft.h"
 #include <assert.h>
+#include <stdbool.h>
+#include <complex.h>
+
+#define IS_POWER_OF_TWO(X) !(X & (X - 1))
 
 static void bit_reverse_permutation(float complex* data, int len, int stride) {
     for (int i = 0, target = 0; i < len; ++i) {
