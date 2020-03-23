@@ -11,7 +11,7 @@ $(BUILD_DIR)/test: $(OBJS)
 
 INC_FLAGS := $(addprefix -I,$(INC_DIR))
 
-COMMONFLAGS =  -Wall -Wextra -Ofast -DDEBUG
+COMMONFLAGS =  -Wall -Wextra -Wpedantic -Ofast -DDEBUG
 
 CFLAGS ?= -std=c99 $(COMMONFLAGS)
 CC ?= gcc
