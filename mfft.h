@@ -2,7 +2,7 @@
 #include <stdbool.h>
 #include <complex.h>
 
-// *** all dimentions must be a power of two ***
+// *** all dimensions must be a power of two ***
 void fast_fourier_transform(float complex* data, int len, int stride, bool inverse);
 
 static inline void fft(float complex* data, int len) {
